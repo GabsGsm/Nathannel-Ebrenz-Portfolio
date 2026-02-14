@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { ArrowRight, BarChart3, Database, BrainCircuit } from "lucide-react";
+import {HomeBG} from '../assets/svg/index';
 
 export function Home() {
   return (
@@ -32,8 +33,8 @@ export function Home() {
 
               {/* Description */}
               <p className="max-w-2xl mx-auto lg:mx-0 text-[#9A9A9A] text-base md:text-lg leading-relaxed font-['Montserrat']">
-                Especialista em transformar dados complexos em visualizações
-                claras e acionáveis. Atuando com <strong className="text-[#CFCFCF]">Power BI</strong>,{" "}
+                Movido pela transformação de dados complexos em insights visuais claros e acionáveis.
+                 Atuando com <strong className="text-[#CFCFCF]">Power BI</strong>,{" "}
                 <strong className="text-[#CFCFCF]">Python</strong>, <strong className="text-[#CFCFCF]">SQL</strong> e{" "}
                 <strong className="text-[#CFCFCF]">Machine Learning</strong> para entregar insights
                 que impulsionam a tomada de decisão estratégica.
@@ -61,13 +62,15 @@ export function Home() {
             </div>
 
             {/* Image - Right Side */}
-            <div className="w-full lg:w-[45%] flex">
-              <div className="relative w-full h-full">
-                <img
-                  src="https://images.unsplash.com/photo-1638983752157-052aa1f15bf1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBkYXRhJTIwYW5hbHlzdCUyMHBvcnRyYWl0JTIwZGFyayUyMGJhY2tncm91bmR8ZW58MXx8fHwxNzcwNzU3NjkxfDA&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="Analista de Dados Profissional"
-                  className="w-full h-auto object-cover shadow-2xl shadow-black/40"
-                />
+            <div className="w-full lg:w-[45%] flex justify-center lg:justify-end">
+              <div className="
+                relative
+                w-full
+                max-w-[600px]
+                max-h-[960px]
+                aspect-square
+              ">
+                <HomeBG className="w-full h-full" />
               </div>
             </div>
           </div>
@@ -117,7 +120,7 @@ export function Home() {
               {
                 title: "Machine Learning",
                 description:
-                  "Modelos preditivos que geraram insights estratégicos para negócios.",
+                  "Desenvolvendo de modelos de Visão Computacional.",
               },
               {
                 title: "Dashboards Analíticos",
@@ -127,7 +130,7 @@ export function Home() {
               {
                 title: "Projetos Premiados",
                 description:
-                  "Soluções reconhecidas pela capacidade de inovação e impacto mensurável.",
+                  "NASA Space Apps Challenge 2018– 1º lugar regional no hackathon da NASA.",
               },
               {
                 title: "Análise de Dados Avançada",

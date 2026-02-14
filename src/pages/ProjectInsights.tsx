@@ -31,7 +31,7 @@ export function ProjectInsights() {
         {/* Header */}
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-semibold text-white mb-4">
-            {project.title}
+            {project.titleInsights}
           </h1>
           <p className="text-xl text-[#FF014F] mb-4">Insights & Análise</p>
         </div>
@@ -42,7 +42,7 @@ export function ProjectInsights() {
             Problema Analisado
           </h2>
           <div className="bg-[#212124] border border-[#2A2A2D] p-6">
-            <p className="text-[#CFCFCF] leading-relaxed">{project.problem}</p>
+            <p className="text-[#CFCFCF] leading-relaxed">{project.problemInsights}</p>
           </div>
         </section>
 
@@ -50,7 +50,17 @@ export function ProjectInsights() {
         <section className="mb-12">
           <h2 className="text-2xl font-semibold text-white mb-4">Contexto</h2>
           <div className="bg-[#212124] border border-[#2A2A2D] p-6">
-            <p className="text-[#CFCFCF] leading-relaxed">{project.context}</p>
+            <div
+              className="
+                text-[#CFCFCF]
+                leading-relaxed
+                [&_ul]:list-disc
+                [&_ul]:pl-6
+                [&_ul]:space-y-2
+                [&_p]:mb-4
+              "
+              dangerouslySetInnerHTML={{ __html: project.contextInsights }}
+            />
           </div>
         </section>
 
@@ -82,20 +92,22 @@ export function ProjectInsights() {
                 <p className="text-3xl font-semibold text-white mb-2">
                   {kpi.value}
                 </p>
-                <div className="flex items-center gap-2">
-                  {getTrendIcon(kpi.change)}
-                  <span
-                    className={`text-sm ${
-                      kpi.change.startsWith("+")
-                        ? "text-green-500"
-                        : kpi.change.startsWith("-")
-                        ? "text-red-500"
-                        : "text-[#9A9A9A]"
-                    }`}
-                  >
-                    {kpi.change}
-                  </span>
-                </div>
+                {kpi.change && (
+                  <div className="flex items-center gap-2">
+                    {getTrendIcon(kpi.change)}
+                    <span
+                      className={`text-sm ${
+                        kpi.change.startsWith("+")
+                          ? "text-green-500"
+                          : kpi.change.startsWith("-")
+                          ? "text-red-500"
+                          : "text-[#9A9A9A]"
+                      }`}
+                    >
+                      {kpi.change}
+                    </span>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -112,11 +124,26 @@ export function ProjectInsights() {
                 key={index}
                 className="bg-[#212124] border border-[#2A2A2D] p-6 hover:border-[#FF014F] transition-colors"
               >
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-[#FF014F] flex items-center justify-center text-white font-semibold">
-                    {index + 1}
+                <div className="grid grid-cols-[100px_1fr] gap-y-6 gap-x-2.5 items-stretch">
+
+                  {/* Coluna esquerda */}
+                  <div className="flex justify-center">
+                    <div className="w-16 h-16 bg-[#FF014F] flex items-center justify-center text-white font-bold text-2xl">
+                      {String(index + 1).padStart(2, "0")}
+                    </div>
                   </div>
-                  <p className="text-[#CFCFCF] leading-relaxed">{insight}</p>
+
+                  {/* Coluna direita */}
+                  <div className="flex flex-col justify-center">
+                    <h3 className="text-white font-bold text-2xl leading-tight">
+                      {insight.label}
+                    </h3>
+
+                    <p className="text-[#CFCFCF] leading-relaxed mt-1">
+                      {insight.value}
+                    </p>
+                  </div>
+
                 </div>
               </div>
             ))}

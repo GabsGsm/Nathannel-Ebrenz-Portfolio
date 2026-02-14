@@ -25,7 +25,7 @@ export function ProjectDashboard() {
         {/* Header */}
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-semibold text-white mb-4">
-            {project.title}
+            {project.titleDash}
           </h1>
           <p className="text-[#9A9A9A] text-lg max-w-3xl">{project.context}</p>
         </div>
@@ -33,28 +33,32 @@ export function ProjectDashboard() {
         {/* Dashboard Embed */}
         <div className="bg-[#212124] border border-[#2A2A2D] p-2">
           <div className="aspect-video bg-[#1A1A1C] flex items-center justify-center relative overflow-hidden">
-            {/* Placeholder for actual iframe */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4 p-8">
-              <ExternalLink className="w-16 h-16 text-[#FF014F]" />
-              <p className="text-[#CFCFCF] text-center">
-                Dashboard Power BI Incorporado
-              </p>
-              <p className="text-[#9A9A9A] text-sm text-center max-w-md">
-                Em produção, este espaço exibiria o dashboard interativo via
-                iframe:
-              </p>
-              <code className="text-xs text-[#9A9A9A] bg-[#0F0F10] px-4 py-2 max-w-full overflow-x-auto block">
-                {`<iframe src="${project.dashboardUrl}" />`}
-              </code>
-            </div>
+            {!Boolean(project.dashboardUrl?.trim()) && (
+              /* Placeholder for actual iframe */
+              <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4 p-8">
+                <ExternalLink className="w-16 h-16 text-[#FF014F]" />
+                <p className="text-[#CFCFCF] text-center">
+                  Dashboard Power BI Incorporado
+                </p>
+                <p className="text-[#9A9A9A] text-sm text-center max-w-md">
+                  Em produção, este espaço exibiria o dashboard interativo via
+                  iframe:
+                </p>
+                <code className="text-xs text-[#9A9A9A] bg-[#0F0F10] px-4 py-2 max-w-full overflow-x-auto block">
+                  {`<iframe src=""/>`}
+                </code>
+              </div> 
+            )}
 
-            {/* Uncomment below to use actual iframe */}
-            {/* <iframe
-              src={project.dashboardUrl}
-              className="w-full h-full border-0"
-              allowFullScreen
-              title={`Dashboard: ${project.title}`}
-            /> */}
+            {Boolean(project.dashboardUrl?.trim()) && (
+              /* Uncomment below to use actual iframe */
+              <iframe
+                src={project.dashboardUrl}
+                className="w-full h-full border-0"
+                allowFullScreen
+                title={`Dashboard: ${project.title}`}
+              />
+            )}
           </div>
         </div>
 

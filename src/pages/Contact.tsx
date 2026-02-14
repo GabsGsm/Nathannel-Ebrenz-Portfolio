@@ -54,7 +54,7 @@ export function Contact() {
                 <h3 className="text-xl font-semibold text-white mb-2">
                   LinkedIn
                 </h3>
-                <p className="text-[#CFCFCF]">/in/seu-perfil</p>
+                <p className="text-[#CFCFCF]">/in/nathannaeldados</p>
                 <p className="text-[#9A9A9A] text-sm mt-2">
                   Conecte-se comigo
                 </p>

@@ -24,15 +24,34 @@ export function Projects() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-semibold text-white mb-6">
-            Projetos
-          </h1>
-          <p className="max-w-3xl mx-auto text-[#9A9A9A] text-lg leading-relaxed">
-            Portfólio focado em análises desenvolvidas em{" "}
-            <span className="text-[#CFCFCF] font-medium">Power BI</span>, com
-            dashboards interativos e análises interpretativas. Cada projeto
-            reflete a capacidade de transformar dados em decisões estratégicas.
-          </p>
+          <section className="mb-11">
+            <h1 className="text-4xl md:text-5xl font-semibold text-white mb-11">
+              Projetos
+            </h1>
+
+            <div className="bg-[#212124] border border-[#2A2A2D] p-8">
+              <p className="text-left text-[#CFCFCF] text-lg leading-relaxed mb-4">
+                Portfólio focado em análises desenvolvidas em{" "}
+                <span className="text-white font-medium">Power BI</span>, com
+                dashboards totalmente interativos e análises interpretativas orientadas a decisões estratégicas.
+                Em cada projeto, realizei o processo completo de <span className="text-white font-medium">ETL (Extract, Transform, Load)</span>{" "}
+                para tratamento, limpeza e modelagem dos dados, garantindo consistência e qualidade das informações.
+              </p>
+
+              <p className="text-left text-[#CFCFCF] text-lg leading-relaxed mb-4">
+                Além disso, desenvolvi medidas complexas em <span className="text-white font-medium">DAX</span> para construção de <span className="text-[#CFCFCF] font-medium">KPIs</span> estratégicos, 
+                análises comparativas e métricas avançadas de desempenho.
+              </p>
+
+              <p className="text-left text-[#CFCFCF] text-lg leading-relaxed">
+                Todos os dashboards são <span className="text-white font-medium">100% interativos</span>, 
+                permitindo ao usuário explorar os dados dinamicamente — filtrando, selecionando, segmentando,
+                clicando em elementos visuais, navegando entre páginas e ajustando perspectivas analíticas conforme a necessidade. 
+                Cada projeto demonstra a capacidade de transformar dados brutos em insights claros, 
+                acionáveis e orientados à tomada de decisão.
+              </p>
+            </div>
+          </section>
           
           {/* Counter */}
           <p className="mt-4 text-sm text-[#9A9A9A]">

@@ -20,14 +20,14 @@ export function About() {
           <section className="bg-[#212124] border border-[#2A2A2D] p-8">
             <p className="text-[#CFCFCF] leading-relaxed mb-4">
               Sou um <span className="text-white font-medium">Analista de Dados</span> apaixonado
-              por revelar histórias ocultas nos números. Com formação sólida em{" "}
+              por revelar histórias ocultas nos números. Com formação em Física e base sólida em{" "}
               <span className="text-white font-medium">Estatística</span> e{" "}
-              <span className="text-white font-medium">Programação Científica</span>, desenvolvo
+              <span className="text-white font-medium">Programação Analítica</span>, desenvolvo
               soluções analíticas que impactam diretamente a tomada de decisão estratégica.
             </p>
             <p className="text-[#CFCFCF] leading-relaxed">
-              Minha experiência abrange desde a construção de dashboards interativos em Power BI
-              até a implementação de modelos de Machine Learning, sempre com foco em comunicar
+              Minha experiência abrange desde a construção e análise de dashboards interativos em Power BI
+              até a implementação de modelos de Machine Learning em Visão Computacional, sempre com foco em comunicar
               insights de forma clara e acionável para públicos técnicos e não-técnicos.
             </p>
           </section>
@@ -52,11 +52,10 @@ export function About() {
               <div className="bg-[#212124] border border-[#2A2A2D] p-6 hover:border-[#FF014F] transition-colors">
                 <Briefcase className="w-8 h-8 text-[#FF014F] mb-4" />
                 <h3 className="text-xl font-semibold text-white mb-3">
-                  Programação Científica
+                  Programação
                 </h3>
                 <p className="text-[#9A9A9A] leading-relaxed">
-                  Domínio de Python, SQL e DAX para manipulação, análise e
-                  modelagem de grandes volumes de dados.
+                  Atuação com Python, SQL e DAX para manipulação, análise e modelagem de dados.
                 </p>
               </div>
 
@@ -66,8 +65,7 @@ export function About() {
                   Análise de Dados Avançada
                 </h3>
                 <p className="text-[#9A9A9A] leading-relaxed">
-                  Experiência em explorar padrões, construir modelos preditivos e
-                  desenvolver dashboards estratégicos que geram valor.
+                  Experiência em processos de ETL, aplicação de IA e análise de padrões para construção de dashboards estratégicos orientados a resultados.
                 </p>
               </div>
 
@@ -116,11 +114,11 @@ export function About() {
                   "DAX",
                   "Machine Learning",
                   "Pandas",
-                  "Scikit-learn",
+                  "MySQL",
                   "Git",
                   "Excel",
                   "Visão Computacional",
-                  "Jupyter",
+                  "YOLOv5 - YOLOv8",
                   "PostgreSQL",
                 ].map((tool, index) => (
                   <div

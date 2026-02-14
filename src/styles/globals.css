@@ -241,3 +241,40 @@ html {
   background-size: 200% 100%;
   animation: skeleton-loading 1.5s ease-in-out infinite;
 }
+
+#home path {
+  fill: none;
+  stroke: white;
+  stroke-width: 1.2;
+
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
+
+  animation: drawLoop 4s ease-in-out infinite;
+}
+
+@keyframes drawLoop {
+  0% {
+    stroke-dashoffset: 1500;
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  75% {
+    stroke-dashoffset: 0;
+    opacity: 0.4;
+  }
+
+  100% {
+    stroke-dashoffset: 1500;
+    opacity: 0;
+  }
+}
