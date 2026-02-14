@@ -15,7 +15,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="bg-[#212124] border border-[#2A2A2D] hover:border-[#FF014F] transition-all group">
+    <div className="bg-[#212124] border border-[#2A2A2D] hover:border-[#FF014F] transition-all group h-full flex flex-col justify-between">
       {/* Image */}
       <div className="aspect-video overflow-hidden bg-[#1A1A1C]">
         <img

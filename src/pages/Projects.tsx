@@ -65,7 +65,7 @@ export function Projects() {
           {displayedItems.map((project, index) => (
             <div
               key={project.id}
-              className="animate-fadeIn"
+              className="animate-fadeIn h-full"
               style={{
                 animationDelay: `${(index % ITEMS_PER_PAGE) * 100}ms`,
                 opacity: 0,

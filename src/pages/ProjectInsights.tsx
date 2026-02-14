@@ -58,6 +58,7 @@ export function ProjectInsights() {
                 [&_ul]:pl-6
                 [&_ul]:space-y-2
                 [&_p]:mb-4
+                [&_ul]:mb-4
               "
               dangerouslySetInnerHTML={{ __html: project.contextInsights }}
             />
@@ -124,10 +125,10 @@ export function ProjectInsights() {
                 key={index}
                 className="bg-[#212124] border border-[#2A2A2D] p-6 hover:border-[#FF014F] transition-colors"
               >
-                <div className="grid grid-cols-[100px_1fr] gap-y-6 gap-x-2.5 items-stretch">
+                <div className="grid md:grid-cols-[100px_1fr] gap-y-6 gap-x-2.5 items-stretch">
 
                   {/* Coluna esquerda */}
-                  <div className="flex justify-center">
+                  <div className="justify-center md:flex hidden">
                     <div className="w-16 h-16 bg-[#FF014F] flex items-center justify-center text-white font-bold text-2xl">
                       {String(index + 1).padStart(2, "0")}
                     </div>
@@ -135,11 +136,19 @@ export function ProjectInsights() {
 
                   {/* Coluna direita */}
                   <div className="flex flex-col justify-center">
-                    <h3 className="text-white font-bold text-2xl leading-tight">
-                      {insight.label}
-                    </h3>
+                    <div className="flex gap-x-3">
+                      <div className="justify-center flex md:hidden">
+                        <div className="w-14 h-14 bg-[#FF014F] flex items-center justify-center text-white font-bold text-2xl">
+                          {String(index + 1).padStart(2, "0")}
+                        </div>
+                      </div>
 
-                    <p className="text-[#CFCFCF] leading-relaxed mt-1">
+                      <h3 className="text-white font-bold text-2xl leading-tight mt-auto mb-auto">
+                        {insight.label}
+                      </h3>
+                    </div>
+
+                    <p className="text-[#CFCFCF] leading-relaxed mt-2 md:mt-1">
                       {insight.value}
                     </p>
                   </div>
@@ -154,9 +163,9 @@ export function ProjectInsights() {
         <section className="mb-12">
           <h2 className="text-2xl font-semibold text-white mb-4">Conclusões</h2>
           <div className="bg-[#1A1A1C] border-l-4 border-[#FF014F] p-6">
-            <p className="text-[#CFCFCF] leading-relaxed">
-              {project.conclusions}
-            </p>
+            <div className="text-[#CFCFCF] leading-relaxed [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_ul]:mb-4 [&_p]:mb-4"
+              dangerouslySetInnerHTML={{ __html: project.conclusions }}
+            />
           </div>
         </section>
 
