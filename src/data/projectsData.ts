@@ -263,7 +263,7 @@ export const projectsData: Project[] = [
     title: "Análise do Mercado Global de Videogames (1980–2020)",
     description:
       "Análise estratégica da evolução da indústria global de videogames ao longo de quatro décadas, identificando padrões de crescimento, liderança de mercado e comportamento regional.",
-    imageUrl: new URL("../assets/img/Games_capa.png", import.meta.url).href,
+    imageUrl: new URL("../assets/img/Games1_Capa.png", import.meta.url).href,
     tags: ["Power BI", "DAX", "SQL"],
     //Page Dashboard
     titleDash: "Panorama Global do Mercado de Jogos",
