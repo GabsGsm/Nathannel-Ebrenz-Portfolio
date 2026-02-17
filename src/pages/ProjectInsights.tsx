@@ -1,6 +1,7 @@
 import { useParams, Link, Navigate } from "react-router";
 import { ArrowLeft, TrendingUp, TrendingDown, Minus, Database, ExternalLink } from "lucide-react";
 import { projectsData } from "../data/projectsData";
+import type { OthersSection } from "../data/projectsData";
 
 export function ProjectInsights() {
   const { projectId } = useParams();
@@ -15,6 +16,42 @@ export function ProjectInsights() {
     if (change.startsWith("-")) return <TrendingDown size={16} className="text-red-500" />;
     return <Minus size={16} className="text-[#9A9A9A]" />;
   };
+
+  const getSectionsAt = (order: number): OthersSection[] =>
+    (project.OthersSection ?? [])
+      .filter((s) => s.order === order)
+      .sort((a, b) => a.order - b.order);
+
+  const renderOthersSection = (sections: OthersSection[]) =>
+    sections.map((section, i) => (
+      <section key={`other-${section.order}-${i}`} className="mb-12">
+        <h2 className="text-2xl font-semibold text-white mb-4">{section.title}</h2>
+        <div className="bg-[#212124] border border-[#2A2A2D] p-6">
+          <div
+            className="
+              text-[#CFCFCF]
+              leading-relaxed
+              [&_ul]:list-disc
+              [&_ul]:pl-6
+              [&_ul]:space-y-2
+              [&_p]:mb-4
+              [&_ul]:mb-4
+              [&_ol]:list-decimal
+              [&_ol]:pl-6
+              [&_ol]:space-y-2
+              [&_ol]:mb-4
+              [&_strong]:text-white
+              [&_h3]:text-white
+              [&_h3]:font-semibold
+              [&_h3]:text-xl
+              [&_h3]:mb-2
+              [&_div]:mb-6
+            "
+            dangerouslySetInnerHTML={{ __html: section.html }}
+          />
+        </div>
+      </section>
+    ));
 
   return (
     <div className="py-20">
@@ -36,6 +73,8 @@ export function ProjectInsights() {
           <p className="text-xl text-[#FF014F] mb-4">Insights & Análise</p>
         </div>
 
+        {renderOthersSection(getSectionsAt(1))}
+
         {/* Problem Section */}
         <section className="mb-12">
           <h2 className="text-2xl font-semibold text-white mb-4">
@@ -45,6 +84,8 @@ export function ProjectInsights() {
             <p className="text-[#CFCFCF] leading-relaxed">{project.problemInsights}</p>
           </div>
         </section>
+
+        {renderOthersSection(getSectionsAt(2))}
 
         {/* Context Section */}
         <section className="mb-12">
@@ -65,6 +106,8 @@ export function ProjectInsights() {
           </div>
         </section>
 
+        {renderOthersSection(getSectionsAt(3))}
+
         {/* Data Source */}
         <section className="mb-12">
           <h2 className="text-2xl font-semibold text-white mb-4">
@@ -77,6 +120,8 @@ export function ProjectInsights() {
             </p>
           </div>
         </section>
+
+        {renderOthersSection(getSectionsAt(4))}
 
         {/* KPIs */}
         <section className="mb-12">
@@ -113,6 +158,8 @@ export function ProjectInsights() {
             ))}
           </div>
         </section>
+
+        {renderOthersSection(getSectionsAt(5))}
 
         {/* Insights */}
         <section className="mb-12">
@@ -159,6 +206,8 @@ export function ProjectInsights() {
           </div>
         </section>
 
+        {renderOthersSection(getSectionsAt(6))}
+
         {/* Conclusions */}
         <section className="mb-12">
           <h2 className="text-2xl font-semibold text-white mb-4">Conclusões</h2>
@@ -168,6 +217,8 @@ export function ProjectInsights() {
             />
           </div>
         </section>
+
+        {renderOthersSection(getSectionsAt(7))}
 
         {/* Actions */}
         <div className="flex flex-col sm:flex-row gap-4">
